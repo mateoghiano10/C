@@ -13,7 +13,7 @@ main(){
     {
         fahr = ((celsius * 9)/5) + 32;
         printf("%d\t%d\n", celsius, fahr);
-        celsius += step;
+        celsius = celsius + step;
     }
     
 }
