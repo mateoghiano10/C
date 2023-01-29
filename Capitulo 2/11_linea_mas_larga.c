@@ -1,4 +1,4 @@
-/*
+3/*
     CURSO C KERNIGHAN & RITCHIE 
     linea mas larga 
 
@@ -34,13 +34,18 @@ main(){
 int getline2(char s[], int lim){
     int c, i;
 
-    for(i = 0 ;(i < lim - 1) && ((c = getchar())!= EOF) && (c != '\n');++i)
-        s[i] = c;
-    if (c == '\n'){
-        s[i] = c;
-        ++i;
+     while(((c=getchar())==' ')&&(c!=EOF)) //Elimina los espacios en blanco iniciales
+       ;                     //No cuentan para la contabilizacion de linea más larga
+    if((c!=' ')&&(c!=EOF)) s[i]=c;
+    if(c!=EOF){
+        for(i=1;(i<lim-1)&&((c=getchar())!=EOF)&&(c!='\n');++i)
+            s[i]=c;
+        if(c=='\n'){
+            s[i]=c;
+            ++i;
+        }
     }
-    s[i] = '0';
+    s[i] = '\0';
     return i;
     
 } // cambiamos las variables 
