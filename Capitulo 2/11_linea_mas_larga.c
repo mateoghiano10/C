@@ -1,4 +1,4 @@
-3/*
+/*
     CURSO C KERNIGHAN & RITCHIE 
     linea mas larga 
 
